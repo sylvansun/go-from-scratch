@@ -22,3 +22,6 @@ go.work
 
 # Unix executable files
 build/
+
+# macOS
+.DS_Store
