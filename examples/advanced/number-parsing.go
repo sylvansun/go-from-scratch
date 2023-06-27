@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"strconv"
 )
 
@@ -21,6 +22,13 @@ func main() {
 
 	k, _ := strconv.Atoi("135")
 	fmt.Println(k)
+	fmt.Println(k, "is", reflect.TypeOf(k))
+	fmt.Printf("%T", k)
+	fmt.Println()
+
+	k_str := strconv.Itoa(k)
+	fmt.Println(k_str)
+	fmt.Println(k_str, "is", reflect.TypeOf(k_str))
 
 	_, e := strconv.Atoi("wat")
 	fmt.Println(e)
