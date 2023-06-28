@@ -6,5 +6,5 @@ import (
 
 func main() {
 	fmt.Println("hello world")
-	fmt.Println("hello from dev branch")
+	fmt.Println("hello from Dev branch")
 }
