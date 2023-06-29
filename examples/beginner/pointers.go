@@ -1,12 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func zeroval(ival int) {
 	ival = 0
 }
 
 func zeroptr(iptr *int) {
+	fmt.Println(iptr)
+	fmt.Println(&iptr)
+	fmt.Println(reflect.TypeOf(iptr))
+	fmt.Println(reflect.TypeOf(&iptr))
 	*iptr = 0
 }
 
