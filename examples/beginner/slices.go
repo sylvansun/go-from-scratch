@@ -56,7 +56,8 @@ func modify_element(array []int, index int) {
 	fmt.Println("inner: ", array)
 	fmt.Println(reflect.TypeOf(array))
 	fmt.Printf("%p\n", &array)    //address of pointers are different
-	fmt.Printf("%p\n", &array[0]) //address of elements are the same
+	fmt.Printf("%p\n", array)     //address of elements are the same
+	fmt.Printf("%p\n", &array[0]) //result is the same as the above
 }
 
 func test_modify() {
@@ -65,10 +66,34 @@ func test_modify() {
 	fmt.Println("outer: ", array)
 	fmt.Println(reflect.TypeOf(array))
 	fmt.Printf("%p\n", &array)
+	fmt.Printf("%p\n", array)
 	fmt.Printf("%p\n", &array[0])
+}
+
+func test_append() {
+	slice := make([]int, 2, 4)
+	for i := 0; i < len(slice); i++ {
+		slice[i] = i
+	}
+	fmt.Printf("slice: %v, addr: %p\n", slice, slice)
+	append_element(slice)
+	fmt.Printf("slice: %v, addr: %p\n", slice, slice)
+}
+
+func append_element(slice []int) {
+	slice = append(slice, 3)
+	slice[1] = 3
+	fmt.Printf("In function: slice: %v, addr: %p\n", slice, slice)
+	slice = append(slice, 4)
+	slice[1] = 4
+	fmt.Printf("In function: slice: %v, addr: %p\n", slice, slice)
+	slice = append(slice, 5) //generate new and address is changed
+	slice[1] = 5
+	fmt.Printf("In function: slice: %v, addr: %p\n", slice, slice)
 }
 
 func main() {
 	// basic_func()
-	test_modify()
+	// test_modify()
+	test_append()
 }
