@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"reflect"
 )
 
-func main() {
+func HttpClients() {
 
 	// resp, err := http.Get("https://gobyexample.com")
 	resp, err := http.Get("http://localhost:8090/headers")

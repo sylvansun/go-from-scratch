@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"net/url"
 )
 
-func main() {
+func URLParsing() {
 
 	s := "postgres://user:pass@host.com:5432/path?k=v#f"
 

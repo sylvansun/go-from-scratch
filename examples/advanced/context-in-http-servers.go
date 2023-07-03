@@ -1,4 +1,4 @@
-package main
+package advanced
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func hello(w http.ResponseWriter, req *http.Request) {
+func Hello(w http.ResponseWriter, req *http.Request) {
 
 	ctx := req.Context()
 	fmt.Println("server: hello handler started")
@@ -24,8 +24,8 @@ func hello(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func main() {
+func ContextInHttpServers() {
 
-	http.HandleFunc("/hello", hello)
+	http.HandleFunc("/hello", Hello)
 	http.ListenAndServe(":8090", nil)
 }

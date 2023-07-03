@@ -1,11 +1,11 @@
-package main
+package advanced
 
 import (
 	"crypto/sha256"
 	"fmt"
 )
 
-func main() {
+func Sha256Hashes() {
 	s := "sha256 this string"
 
 	h := sha256.New()

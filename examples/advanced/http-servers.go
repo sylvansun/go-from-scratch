@@ -1,16 +1,16 @@
-package main
+package advanced
 
 import (
 	"fmt"
 	"net/http"
 )
 
-func hello(w http.ResponseWriter, req *http.Request) {
+func SimpleHello(w http.ResponseWriter, req *http.Request) {
 
 	fmt.Fprintf(w, "hello from localhost\n")
 }
 
-func headers(w http.ResponseWriter, req *http.Request) {
+func Headers(w http.ResponseWriter, req *http.Request) {
 
 	for name, headers := range req.Header {
 		for _, h := range headers {
@@ -19,10 +19,10 @@ func headers(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func main() {
+func HttpServers() {
 
-	http.HandleFunc("/hello", hello)
-	http.HandleFunc("/headers", headers)
+	http.HandleFunc("/hello", SimpleHello)
+	http.HandleFunc("/headers", Headers)
 
 	http.ListenAndServe(":8090", nil)
 }
