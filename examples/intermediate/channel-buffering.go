@@ -1,8 +1,8 @@
-package main
+package intermediate
 
 import "fmt"
 
-func main() {
+func ChannelBuffering() {
 
 	messages := make(chan string, 2)
 

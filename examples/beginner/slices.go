@@ -1,11 +1,11 @@
-package main
+package beginner
 
 import (
 	"fmt"
 	"reflect"
 )
 
-func basic_func() {
+func Sbasic_func() {
 	var s []string
 	fmt.Println("uninit:", s, s == nil, len(s) == 0)
 
@@ -51,7 +51,7 @@ func basic_func() {
 	fmt.Println("2d: ", twoD)
 }
 
-func modify_element(array []int, index int) {
+func Smodify_element(array []int, index int) {
 	array[index] = 100
 	fmt.Println("inner: ", array)
 	fmt.Println(reflect.TypeOf(array))
@@ -60,7 +60,7 @@ func modify_element(array []int, index int) {
 	fmt.Printf("%p\n", &array[0]) //result is the same as the above
 }
 
-func test_modify() {
+func Stest_modify() {
 	array := make([]int, 10)
 	modify_element(array, 2)
 	fmt.Println("outer: ", array)
@@ -92,7 +92,7 @@ func append_element(slice []int) {
 	fmt.Printf("In function: slice: %v, addr: %p\n", slice, slice)
 }
 
-func main() {
+func Slices() {
 	// basic_func()
 	// test_modify()
 	test_append()

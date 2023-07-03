@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"fmt"
@@ -6,14 +6,14 @@ import (
 	"time"
 )
 
-func worker(id int) {
+func gworker(id int) {
 	fmt.Printf("Worker %d starting\n", id)
 
 	time.Sleep(time.Second)
 	fmt.Printf("Worker %d done\n", id)
 }
 
-func main() {
+func WaitGroups() {
 
 	var wg sync.WaitGroup // Note: if a WaitGroup is explicitly passed into functions, it should be done by pointer
 
@@ -24,7 +24,7 @@ func main() {
 
 		go func() {
 			defer wg.Done()
-			worker(i)
+			gworker(i)
 		}()
 	}
 

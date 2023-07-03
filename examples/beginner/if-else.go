@@ -1,8 +1,8 @@
-package main
+package beginner
 
 import "fmt"
 
-func main() {
+func IfElse() {
 
 	if 7%2 == 0 {
 		fmt.Println("7 is even")

@@ -1,11 +1,11 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"time"
 )
 
-func worker(done chan bool) {
+func sworker(done chan bool) {
 	fmt.Print("working...")
 	time.Sleep(time.Second)
 	fmt.Println("done")
@@ -13,10 +13,10 @@ func worker(done chan bool) {
 	done <- true
 }
 
-func main() {
+func ChannelSynchronization() {
 
 	done := make(chan bool, 1)
-	go worker(done)
+	go sworker(done)
 
 	fmt.Println(<-done)
 	//sending message from channel to string is not allowed

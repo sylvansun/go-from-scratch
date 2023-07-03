@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"sync/atomic"
 )
 
-func main() {
+func AtomicCounters() {
 
 	var ops uint64
 

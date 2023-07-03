@@ -1,11 +1,11 @@
-package main
+package beginner
 
 import (
 	"fmt"
 	"reflect"
 )
 
-func basic_func() {
+func Basic_func() {
 	var a [5]int
 	fmt.Println("emp:", a)
 
@@ -44,7 +44,7 @@ func test_modify() {
 	fmt.Printf("%p\n", &array[0])
 }
 
-func main() {
+func Arrays() {
 	// basic_func()
 	test_modify()
 	// array := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}

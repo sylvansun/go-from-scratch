@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import "fmt"
 
@@ -37,7 +37,7 @@ func (lst *List[T]) GetAll() []T {
 	return elems
 }
 
-func main() {
+func Generics() {
 	var m = map[int]string{1: "2", 2: "4", 4: "8"}
 
 	fmt.Println("keys:", MapKeys(m))

@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import "fmt"
 
@@ -6,7 +6,7 @@ func mayPanic() {
 	panic("a problem")
 }
 
-func main() {
+func Recover() {
 
 	defer func() {
 		if r := recover(); r != nil {

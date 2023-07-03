@@ -1,4 +1,4 @@
-package main
+package beginner
 
 import "fmt"
 
@@ -15,7 +15,7 @@ type container struct {
 	str string
 }
 
-func main() {
+func StructEmbedding() {
 
 	co := container{
 		base: base{

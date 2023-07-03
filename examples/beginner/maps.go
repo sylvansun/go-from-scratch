@@ -1,8 +1,8 @@
-package main
+package beginner
 
 import "fmt"
 
-func main() {
+func Maps() {
 
 	m := make(map[string]int)
 

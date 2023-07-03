@@ -1,11 +1,11 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
+func Tickers() {
 
 	ticker := time.NewTicker(500 * time.Millisecond)
 	done := make(chan bool)

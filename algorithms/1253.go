@@ -1,11 +1,6 @@
-package main
+package algorithms
 
-import (
-	"fmt"
-	// "reflect"
-)
-
-func reconstructMatrix(upper int, lower int, colsum []int) [][]int {
+func ReconstructMatrix(upper int, lower int, colsum []int) [][]int {
 	ret := make([][]int, 2)
 	for i := 0; i < 2; i++ {
 		ret[i] = make([]int, len(colsum))
@@ -37,14 +32,4 @@ func reconstructMatrix(upper int, lower int, colsum []int) [][]int {
 		}
 	}
 	return ret
-}
-
-func main() {
-	upper := 5
-	lower := 5
-	colsum := []int{2, 1, 2, 0, 1, 0, 1, 2, 0, 1}
-	// fmt.Println(reflect.TypeOf(colsum))
-	// fmt.Println(len(colsum))
-	ret := reconstructMatrix(upper, lower, colsum)
-	fmt.Println(ret)
 }

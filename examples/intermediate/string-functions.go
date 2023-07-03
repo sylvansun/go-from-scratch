@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 
 var p = fmt.Println
 
-func main() {
+func StringFunctions() {
 
 	p("Contains:  ", s.Contains("test", "es"))
 	p("Count:     ", s.Count("test", "t"))

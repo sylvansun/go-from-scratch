@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"fmt"
@@ -17,7 +17,7 @@ func (c *Container) inc(name string) {
 	c.counters[name]++
 }
 
-func main() {
+func Mutexes() {
 	c := Container{
 
 		counters: map[string]int{"a": 0, "b": 0},

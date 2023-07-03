@@ -1,11 +1,11 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"os"
 )
 
-func main() {
+func Defer() {
 
 	f := createFile("/tmp/defer.txt")
 	defer closeFile(f) //This will be executed at the end of the enclosing function (main), after writeFile has finished.

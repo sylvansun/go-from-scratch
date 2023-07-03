@@ -1,11 +1,11 @@
-package main
+package beginner
 
 import (
 	"fmt"
 	"unicode/utf8"
 )
 
-func main() {
+func StringsAndRunes() {
 
 	const s = "สวัสดี"
 

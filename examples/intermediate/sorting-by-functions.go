@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"fmt"
@@ -23,7 +23,7 @@ func (s byLength) Less(i, j int) bool {
 	}
 }
 
-func main() {
+func SoringByFunctions() {
 	fruits := []string{"apple", "peach", "banana", "kiwi", "apple"}
 	sort.Sort(byLength(fruits))
 	fmt.Println(fruits)

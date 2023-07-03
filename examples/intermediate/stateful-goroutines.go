@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"fmt"
@@ -17,7 +17,7 @@ type writeOp struct {
 	resp chan bool
 }
 
-func main() {
+func StatefulGoroutines() {
 
 	var readOps uint64
 	var writeOps uint64

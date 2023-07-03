@@ -1,4 +1,4 @@
-package main
+package intermediate
 
 import (
 	"fmt"
@@ -17,7 +17,7 @@ func add(num *int) {
 	}
 }
 
-func main() {
+func Goroutines() {
 
 	f("direct")
 

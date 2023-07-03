@@ -1,11 +1,11 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
+func Timers() {
 
 	timer1 := time.NewTimer(2 * time.Second)
 

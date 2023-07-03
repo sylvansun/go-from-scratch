@@ -1,7 +1,6 @@
-package main
+package algorithms
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -12,7 +11,7 @@ func min(a, b int) int {
 	return b
 }
 
-func maxSumDivThree(nums []int) int {
+func MaxSumDivThree(nums []int) int {
 	ret := 0
 	min11 := math.MaxInt32
 	min12 := math.MaxInt32
@@ -45,10 +44,4 @@ func maxSumDivThree(nums []int) int {
 	default:
 		return ret
 	}
-}
-
-func main() {
-	nums := []int{3, 6, 5, 1, 8}
-	ret := maxSumDivThree(nums)
-	fmt.Println(ret)
 }

@@ -1,11 +1,11 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"os"
 )
 
-func main() {
+func Panic() {
 
 	// panic("a problem")
 

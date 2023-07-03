@@ -1,11 +1,11 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
+func RateLimiting() {
 
 	requests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {

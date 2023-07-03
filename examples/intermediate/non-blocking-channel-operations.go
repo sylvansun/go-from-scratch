@@ -1,8 +1,8 @@
-package main
+package intermediate
 
 import "fmt"
 
-func main() {
+func NonBlockingChannelOperations() {
 	messages := make(chan string)
 	signals := make(chan bool)
 

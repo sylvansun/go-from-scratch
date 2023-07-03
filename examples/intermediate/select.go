@@ -1,11 +1,11 @@
-package main
+package intermediate
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
+func Select() {
 
 	c1 := make(chan string)
 	c2 := make(chan string)

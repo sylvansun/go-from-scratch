@@ -1,10 +1,6 @@
-package main
+package algorithms
 
-import (
-	"fmt"
-)
-
-func isCircularSentence(sentence string) bool {
+func IsCircularSentence(sentence string) bool {
 	length := len(sentence)
 	if sentence[0] != sentence[length-1] {
 		return false
@@ -15,8 +11,4 @@ func isCircularSentence(sentence string) bool {
 		}
 	}
 	return true
-}
-
-func main() {
-	fmt.Println(isCircularSentence("A man, a plan, a canal: Panama"))
 }

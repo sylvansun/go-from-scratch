@@ -1,8 +1,8 @@
-package main
+package intermediate
 
 import "fmt"
 
-func main() {
+func RangeOverChannels() {
 
 	queue := make(chan string, 3)
 	queue <- "one"
