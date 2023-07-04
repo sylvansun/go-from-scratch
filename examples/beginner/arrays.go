@@ -51,3 +51,9 @@ func Arrays() {
 	// modify_element(array, 2)
 	// fmt.Println(array)
 }
+
+func TruncatedArray(array []int) []int {
+	array_truncated := array[1:]
+	array_truncated[0] = 310
+	return array_truncated
+}
