@@ -21,3 +21,18 @@ func TestTruncatedArray(t *testing.T) {
 		})
 	})
 }
+
+func TestArrayBoundViolation(t *testing.T) {
+	Convey("TestPrint", t, func() {
+
+		emptyArray := ArrayBoundViolation([]int{1, 2, 3, 4, 5})
+		emptyExample := make([]int, 0)
+		emptyExampleExtra := []int{}
+		//these three arrays are the same
+		So(emptyArray, ShouldEqual, emptyExample)
+		So(emptyArray, ShouldEqual, emptyExampleExtra)
+		So(emptyExample, ShouldEqual, emptyExampleExtra)
+
+		So(len(emptyExample), ShouldEqual, 0)
+	})
+}

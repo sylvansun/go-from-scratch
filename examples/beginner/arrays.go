@@ -53,7 +53,12 @@ func Arrays() {
 }
 
 func TruncatedArray(array []int) []int {
-	array_truncated := array[1:]
-	array_truncated[0] = 310
-	return array_truncated
+	arrayTruncated := array[1:]
+	arrayTruncated[0] = 310
+	return arrayTruncated
+}
+
+func ArrayBoundViolation(array []int) []int {
+	arrayTruncated := array[len(array):]
+	return arrayTruncated
 }
