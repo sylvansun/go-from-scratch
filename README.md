@@ -11,4 +11,6 @@ Learning Golang from scratch during my internship.
 
 [go unit tests](https://geektutu.com/post/quick-go-test.html) introduction to unit test
 
-[goconvey](https://github.com/smartystreets/goconvey) A yummy Go testing tool which directly integrates with go test(I'm currently learning about it)
+[goconvey](https://github.com/smartystreets/goconvey) A yummy Go testing tool which directly integrates with go test(I'm currently learning it)
+
+[gomonkey](https://github.com/agiledragon/gomonkey) A library to make Go monkey patching in unit tests easy

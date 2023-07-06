@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestExitDemo(t *testing.T) {
+func ExitDemo(t *testing.T) {
 
 	defer t.Log("!")
 

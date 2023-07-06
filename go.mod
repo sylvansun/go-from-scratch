@@ -2,7 +2,10 @@ module go-from-scratch
 
 go 1.20
 
-require github.com/smartystreets/goconvey v1.8.1
+require (
+	github.com/agiledragon/gomonkey/v2 v2.10.1
+	github.com/smartystreets/goconvey v1.8.1
+)
 
 require (
 	github.com/gopherjs/gopherjs v1.17.2 // indirect
