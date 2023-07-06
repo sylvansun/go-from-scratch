@@ -1,4 +1,4 @@
-module go-from-scratch
+module github.com/SylvanSun/go-from-scratch
 
 go 1.20
 

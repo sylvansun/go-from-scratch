@@ -2,37 +2,37 @@ package intermediate
 
 import (
 	"fmt"
-	"os"
+	"time"
 )
 
-func Defer() {
+func DeferPrint() {
+	fmt.Println("A")
+	defer func() {
+		fmt.Println("B")
+		defer fmt.Println("C")
+		fmt.Println("D")
+	}()
 
-	f := createFile("/tmp/defer.txt")
-	defer closeFile(f) //This will be executed at the end of the enclosing function (main), after writeFile has finished.
-	writeFile(f)
+	defer fmt.Println("E")
+	fmt.Println("F")
 }
 
-func createFile(p string) *os.File {
-	fmt.Println("creating")
-	f, err := os.Create(p)
-	if err != nil {
-		panic(err)
+func DeferLoop() {
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
 	}
-	return f
 }
 
-func writeFile(f *os.File) {
-	fmt.Println("writing")
-	fmt.Fprintln(f, "data")
+func DeferTime() {
+	startedAt := time.Now()
+	defer fmt.Println(time.Since(startedAt))
 
+	time.Sleep(time.Second)
 }
 
-func closeFile(f *os.File) {
-	fmt.Println("closing")
-	err := f.Close()
+func DeferTimeClosure() {
+	startedAt := time.Now()
+	defer func() { fmt.Println(time.Since(startedAt)) }()
 
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
-		os.Exit(1)
-	}
+	time.Sleep(time.Second)
 }

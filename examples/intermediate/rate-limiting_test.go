@@ -2,10 +2,11 @@ package intermediate
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
-func RateLimiting() {
+func TestRateLimiting(t *testing.T) {
 
 	requests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {
