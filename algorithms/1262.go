@@ -4,13 +4,6 @@ import (
 	"math"
 )
 
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
-}
-
 func MaxSumDivThree(nums []int) int {
 	ret := 0
 	min11 := math.MaxInt32
