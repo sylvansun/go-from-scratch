@@ -1,6 +1,6 @@
 package algorithms
 
-func reverseList(head *ListNode) *ListNode {
+func reverseListNode(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}
@@ -16,13 +16,20 @@ func reverseList(head *ListNode) *ListNode {
 	return prev
 }
 
-func square_distance(x1 float64, y1 float64, x2 float64, y2 float64) float64 {
+func squareDistanceFloat64(x1 float64, y1 float64, x2 float64, y2 float64) float64 {
 	return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2)
 }
 
-func min(a, b int) int {
+func minInt(a, b int) int {
 	if a < b {
 		return a
 	}
 	return b
+}
+
+func absInt(a int) int {
+	if a < 0 {
+		a = -a
+	}
+	return a
 }

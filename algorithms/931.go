@@ -6,16 +6,16 @@ func MinFallingPathSum(matrix [][]int) int {
 	for i := 1; i < row; i++ {
 		for j := 0; j < col; j++ {
 			if j == 0 {
-				matrix[i][j] += min(matrix[i-1][j], matrix[i-1][j+1])
+				matrix[i][j] += minInt(matrix[i-1][j], matrix[i-1][j+1])
 			} else if j == col-1 {
-				matrix[i][j] += min(matrix[i-1][j], matrix[i-1][j-1])
+				matrix[i][j] += minInt(matrix[i-1][j], matrix[i-1][j-1])
 			} else {
-				matrix[i][j] += min(min(matrix[i-1][j], matrix[i-1][j-1]), matrix[i-1][j+1])
+				matrix[i][j] += minInt(minInt(matrix[i-1][j], matrix[i-1][j-1]), matrix[i-1][j+1])
 			}
 		}
 	}
 	for j := 0; j < col; j++ {
-		ret = min(ret, matrix[row-1][j])
+		ret = minInt(ret, matrix[row-1][j])
 	}
 	return ret
 }

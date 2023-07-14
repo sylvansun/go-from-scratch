@@ -31,9 +31,9 @@ func MaxSumDivThree(nums []int) int {
 	}
 	switch ret % 3 {
 	case 1:
-		return ret - min(min11, min(min12, min21+min22))
+		return ret - minInt(min11, minInt(min12, min21+min22))
 	case 2:
-		return ret - min(min21, min11+min12)
+		return ret - minInt(min21, min11+min12)
 	default:
 		return ret
 	}
