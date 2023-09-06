@@ -24,3 +24,25 @@ func TestMapNoKey(t *testing.T) {
 		})
 	})
 }
+
+func TestMapTraverse(t *testing.T) {
+	Convey("TestMapTraverse", t, func() {
+
+		Convey("single test case\n", func() {
+			sampleMap := make(map[uint64][]uint64)
+			sampleMap[1] = make([]uint64, 0)
+			sampleMap[2] = []uint64{1, 2, 3, 4}
+
+			// for key, value := range sampleMap {
+			// 	fmt.Println(key, value)
+			// }
+
+			keyRange := 3
+			for i := 0; i < keyRange; i++ {
+				//when visiting a key not set, value will be nil and ok will be false
+				value, ok := sampleMap[uint64(i)]
+				fmt.Println(i, value, ok)
+			}
+		})
+	})
+}
