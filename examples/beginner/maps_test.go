@@ -38,11 +38,18 @@ func TestMapTraverse(t *testing.T) {
 			// }
 
 			keyRange := 3
+			fmt.Println(len(sampleMap))
 			for i := 0; i < keyRange; i++ {
 				//when visiting a key not set, value will be nil and ok will be false
 				value, ok := sampleMap[uint64(i)]
 				fmt.Println(i, value, ok)
 			}
+			boolMap := make(map[uint64]map[uint64]bool)
+			boolMap[1] = make(map[uint64]bool)
+			boolMap[1][2] = true
+			fmt.Println(boolMap[1])
+			fmt.Println(boolMap[1][2])
+			fmt.Println(boolMap[1][3])
 		})
 	})
 }
