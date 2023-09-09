@@ -12,8 +12,11 @@ func TestMapNoKey(t *testing.T) {
 
 		Convey("single test case\n", func() {
 			sampleMap := make(map[uint64]map[uint64][]uint64)
+			fmt.Println(len(sampleMap[122]))
 			sampleMap[122] = make(map[uint64][]uint64)
+			fmt.Println(len(sampleMap[122]))
 			sampleMap[122][118] = []uint64{1, 2}
+			fmt.Println(len(sampleMap[122]))
 			fmt.Println(sampleMap)
 			fmt.Println(sampleMap[122])
 			fmt.Println(sampleMap[122][118])
