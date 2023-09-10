@@ -56,3 +56,28 @@ func TestMapTraverse(t *testing.T) {
 		})
 	})
 }
+
+func TestEmptyMapVisit(t *testing.T) {
+	Convey("TestEmptyMapVisit", t, func() {
+
+		Convey("single test case\n", func() {
+			sampleMap := make(map[uint64]map[uint64]map[uint64]bool)
+			value1, ok := sampleMap[1]
+			fmt.Println(value1, ok) // map[] false
+			value2, ok := sampleMap[1][1]
+			fmt.Println(value2, ok) // map[] false
+			value3, ok := sampleMap[1][1][1]
+			fmt.Println(value3, ok) // false false
+
+			// sampleMap[1][1][1] = true // would fail
+			// sampleMap[1][1] = map[uint64]bool{1: true} // would fail
+			sampleMap[1] = map[uint64]map[uint64]bool{1: {1: true}}
+			value1, ok = sampleMap[1]
+			fmt.Println(value1, ok) // map[1:map[1:true]] true
+			value2, ok = sampleMap[1][1]
+			fmt.Println(value2, ok) // map[1:true] true
+			value3, ok = sampleMap[1][1][1]
+			fmt.Println(value3, ok) // true true
+		})
+	})
+}
