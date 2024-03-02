@@ -168,3 +168,15 @@ func TestMatrixSum(t *testing.T) {
 		})
 	})
 }
+
+func TestCoinChange(t *testing.T) {
+	Convey("TestCoinChange", t, func() {
+
+		Convey("lc 322", func() {
+			coins := []int{1, 2, 5}
+			amount := 11
+			expected := 3
+			So(coinChange(coins, amount), ShouldEqual, expected)
+		})
+	})
+}
