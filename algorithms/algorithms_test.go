@@ -180,3 +180,15 @@ func TestCoinChange(t *testing.T) {
 		})
 	})
 }
+
+func TestNumDistinct(t *testing.T) {
+	Convey("TestNumDistinct", t, func() {
+
+		Convey("lc 115", func() {
+			s := "rabbbit"
+			t := "rabbit"
+			expected := 3
+			So(numDistinct(s, t), ShouldEqual, expected)
+		})
+	})
+}
