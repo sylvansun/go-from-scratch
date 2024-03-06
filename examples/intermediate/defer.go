@@ -25,7 +25,9 @@ func DeferLoop() {
 
 func DeferTime() {
 	startedAt := time.Now()
-	defer fmt.Println(time.Since(startedAt))
+	defer func() {
+		fmt.Println(time.Since(startedAt))
+	}()
 
 	time.Sleep(time.Second)
 }
