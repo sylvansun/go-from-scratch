@@ -47,7 +47,7 @@ func doPrintAnimals() {
 	time.Sleep(2 * time.Second)
 }
 
-func noBufferChannel() {
+func NoBufferChannel() {
 	ch := make(chan int)
 	ch <- 10
 	fmt.Println("send success")

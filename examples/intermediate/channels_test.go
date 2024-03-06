@@ -19,7 +19,7 @@ func TestNoBufferChannel(t *testing.T) {
 	Convey("TestNoBufferChannel", t, func() {
 
 		Convey("single test case", func() {
-			noBufferChannel()
+			NoBufferChannel()
 		})
 	})
 }

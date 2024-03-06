@@ -1,6 +1,6 @@
-module github.com/SylvanSun/go-from-scratch
+module go-from-scratch
 
-go 1.18
+go 1.20
 
 require (
 	github.com/SylvanSun/goraph v0.0.0-20230714085446-1d32a62e8ca9

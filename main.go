@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 
+	"go-from-scratch/examples/intermediate"
+
 	"github.com/SylvanSun/goraph"
 )
 
@@ -60,6 +62,7 @@ func main() {
 	//Kisp 3rd: The distance from A to D is  +Inf
 	//Kisp 3rd: The path from A to D is:  []
 	Kisp()
+	intermediate.NoBufferChannel()
 }
 
 func Dijkstra() {
