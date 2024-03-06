@@ -1,5 +1,10 @@
 package beginner
 
+import (
+	"fmt"
+	"reflect"
+)
+
 type NameEnum int
 
 const (
@@ -25,4 +30,16 @@ func (name NameEnum) String() string {
 	default:
 		return "unknown"
 	}
+}
+
+type Animal struct {
+}
+
+func (a *Animal) Eat() {
+	fmt.Println("Eat")
+}
+
+func doCall() {
+	a := Animal{}
+	reflect.ValueOf(&a).MethodByName("Eat").Call([]reflect.Value{})
 }

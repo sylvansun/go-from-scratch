@@ -17,3 +17,12 @@ func TestString(t *testing.T) {
 		})
 	})
 }
+
+func TestDoCall(t *testing.T) {
+	Convey("TestDoCall", t, func() {
+
+		Convey("single test case", func() {
+			doCall()
+		})
+	})
+}
