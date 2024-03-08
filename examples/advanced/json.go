@@ -66,3 +66,30 @@ func JsonDemo() {
 	d := map[string]int{"apple": 5, "lettuce": 7}
 	enc.Encode(d)
 }
+
+type Person struct {
+	Name string `json:"jsonname"`
+	Age  int    `json:"age"`
+}
+
+func MarshalDemo() {
+	p := Person{Name: "Alice", Age: 30}
+
+	// 将结构体编码成JSON格式的字节序列
+	jsonData, err := json.Marshal(p)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	fmt.Println(string(jsonData))
+	fmt.Println(jsonData)
+
+	// 将JSON格式的字节序列解码成结构体
+	var decodedPerson Person
+	err = json.Unmarshal(jsonData, &decodedPerson)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	fmt.Println(decodedPerson)
+}

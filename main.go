@@ -1,9 +1,10 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 
-	"go-from-scratch/examples/intermediate"
+	"go-from-scratch/examples/advanced"
 
 	"github.com/SylvanSun/goraph"
 )
@@ -43,26 +44,16 @@ func (edge *myEdge) Get() (goraph.ID, goraph.ID, float64) {
 }
 
 func main() {
-	//Dikjstra: The distance from S to T is  44
-	//Dikjstra: The path from S to T is: T<-F<-E<-B<-S
-	Dijkstra()
-
-	//Yen 1st: The distance from A to D is  2
-	//Yen 1st: The path from A to D is:  [A D]
-	//Yen 2nd: The distance from A to D is  3
-	//Yen 2nd: The path from A to D is:  [A B C D]
-	//Yen 3rd: The distance from A to D is  4
-	//Yen 3rd: The path from A to D is:  [A B E D]
-	Yen()
-
-	//Kisp 1st: The distance from A to D is  5
-	//Kisp 1st: The path from A to D is:  [C E F H]
-	//Kisp 2nd: The distance from A to D is  11
-	//Kisp 2nd: The path from A to D is:  [C D F G H]
-	//Kisp 3rd: The distance from A to D is  +Inf
-	//Kisp 3rd: The path from A to D is:  []
-	Kisp()
-	intermediate.NoBufferChannel()
+	var hostType string
+	flag.StringVar(&hostType, "host", "servr", "host type")
+	flag.Parse()
+	if hostType == "server" {
+		advanced.Serve()
+	} else if hostType == "client" {
+		advanced.Request()
+	} else {
+		fmt.Println("Invalid host type")
+	}
 }
 
 func Dijkstra() {
