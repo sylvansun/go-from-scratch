@@ -5,6 +5,7 @@ import (
 	"log"
 	"net"
 	"net/rpc"
+	"net/rpc/jsonrpc"
 )
 
 type HelloService struct{}
@@ -19,7 +20,7 @@ func (p *HelloService) Hello2(request string, reply *string) error {
 	return nil
 }
 
-const HelloServiceName = "path/to/pkg.HelloService"
+const HelloServiceName = "HelloService"
 
 type HelloServiceInterface interface {
 	Hello(request string, reply *string) error
@@ -44,7 +45,8 @@ func Serve() {
 			log.Fatal("Accept error:", err)
 		}
 
-		go rpc.ServeConn(conn)
+		go rpc.ServeCodec(jsonrpc.NewServerCodec(conn))
+		fmt.Println("new client connected")
 	}
 }
 
@@ -55,10 +57,12 @@ type HelloServiceClient struct {
 var _ HelloServiceInterface = (*HelloServiceClient)(nil)
 
 func DialHelloService(network, address string) (*HelloServiceClient, error) {
-	c, err := rpc.Dial(network, address)
+	conn, err := net.Dial("tcp", "localhost:1234")
 	if err != nil {
-		return nil, err
+		log.Fatal("net.Dial:", err)
 	}
+
+	c := rpc.NewClientWithCodec(jsonrpc.NewClientCodec(conn))
 	return &HelloServiceClient{Client: c}, nil
 }
 
@@ -77,7 +81,7 @@ func Request(msg string) {
 	}
 
 	var reply string
-	err = client.Hello2(msg, &reply)
+	err = client.Hello(msg, &reply)
 	if err != nil {
 		log.Fatal(err)
 	}
