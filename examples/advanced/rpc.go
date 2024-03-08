@@ -23,6 +23,7 @@ const HelloServiceName = "path/to/pkg.HelloService"
 
 type HelloServiceInterface interface {
 	Hello(request string, reply *string) error
+	Hello2(request string, reply *string) error
 }
 
 func RegisterHelloService(svc HelloServiceInterface) error {
@@ -65,6 +66,10 @@ func (p *HelloServiceClient) Hello(request string, reply *string) error {
 	return p.Client.Call(HelloServiceName+".Hello", request, reply)
 }
 
+func (p *HelloServiceClient) Hello2(request string, reply *string) error {
+	return p.Client.Call(HelloServiceName+".Hello2", request, reply)
+}
+
 func Request(msg string) {
 	client, err := DialHelloService("tcp", "localhost:1234")
 	if err != nil {
@@ -72,7 +77,7 @@ func Request(msg string) {
 	}
 
 	var reply string
-	err = client.Hello(msg, &reply)
+	err = client.Hello2(msg, &reply)
 	if err != nil {
 		log.Fatal(err)
 	}
