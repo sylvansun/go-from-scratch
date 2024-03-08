@@ -2,8 +2,10 @@ package advanced
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"net"
+	"net/http"
 	"net/rpc"
 	"net/rpc/jsonrpc"
 )
@@ -48,6 +50,25 @@ func Serve() {
 		go rpc.ServeCodec(jsonrpc.NewServerCodec(conn))
 		fmt.Println("new client connected")
 	}
+}
+
+func ServeWithHTTP() {
+	rpc.RegisterName("HelloService", new(HelloService))
+
+	fmt.Println("HTTP server started")
+	http.HandleFunc("/jsonrpc", func(w http.ResponseWriter, r *http.Request) {
+		var conn io.ReadWriteCloser = struct {
+			io.Writer
+			io.ReadCloser
+		}{
+			ReadCloser: r.Body,
+			Writer:     w,
+		}
+
+		rpc.ServeRequest(jsonrpc.NewServerCodec(conn))
+	})
+
+	http.ListenAndServe(":1234", nil)
 }
 
 type HelloServiceClient struct {
