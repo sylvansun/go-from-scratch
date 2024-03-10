@@ -7,6 +7,7 @@ require (
 	github.com/agiledragon/gomonkey/v2 v2.10.1
 	github.com/json-iterator/go v1.1.12
 	github.com/smartystreets/goconvey v1.8.1
+	google.golang.org/protobuf v1.33.0
 )
 
 require (
