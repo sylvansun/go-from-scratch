@@ -5,26 +5,31 @@ import (
 	"fmt"
 
 	"go-from-scratch/examples/advanced"
+	"go-from-scratch/examples/intermediate"
 )
 
 func main() {
 	var hostType, clientMsg string
-	var enableHTTP bool
+	var CSMode, enableHTTP bool
 
 	flag.StringVar(&hostType, "host", "servr", "host type")
 	flag.StringVar(&clientMsg, "msg", "hello", "client message")
 	flag.BoolVar(&enableHTTP, "http", false, "server type")
+	flag.BoolVar(&CSMode, "cs", false, "client server mode")
 	flag.Parse()
 
-	if hostType == "server" {
-		if enableHTTP {
-			advanced.ServeWithHTTP()
+	if CSMode {
+		if hostType == "server" {
+			if enableHTTP {
+				advanced.ServeWithHTTP()
+			} else {
+				advanced.Serve()
+			}
+		} else if hostType == "client" {
+			advanced.Request(clientMsg)
 		} else {
-			advanced.Serve()
+			fmt.Println("Invalid host type")
 		}
-	} else if hostType == "client" {
-		advanced.Request(clientMsg)
-	} else {
-		fmt.Println("Invalid host type")
 	}
+	intermediate.DoProduceComsume()
 }
