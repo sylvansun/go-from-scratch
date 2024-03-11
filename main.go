@@ -5,7 +5,6 @@ import (
 	"fmt"
 
 	"go-from-scratch/examples/advanced"
-	"go-from-scratch/examples/intermediate"
 )
 
 func main() {
@@ -31,5 +30,5 @@ func main() {
 			fmt.Println("Invalid host type")
 		}
 	}
-	intermediate.DoProduceComsume()
+	advanced.DoHandle()
 }
