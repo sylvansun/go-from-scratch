@@ -192,3 +192,27 @@ func TestNumDistinct(t *testing.T) {
 		})
 	})
 }
+
+func TestCalculateDepth(t *testing.T) {
+	Convey("TestCalculateDepth", t, func() {
+		Convey("single test case", func() {
+			root := &TreeNode{
+				Val: 3,
+				Left: &TreeNode{
+					Val: 9,
+				},
+				Right: &TreeNode{
+					Val: 20,
+					Left: &TreeNode{
+						Val: 15,
+					},
+					Right: &TreeNode{
+						Val: 7,
+					},
+				},
+			}
+			expected := 3
+			So(calculateDepth(root), ShouldEqual, expected)
+		})
+	})
+}

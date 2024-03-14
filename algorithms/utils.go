@@ -27,6 +27,13 @@ func minInt(a, b int) int {
 	return b
 }
 
+func maxInt(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
 func absInt(a int) int {
 	if a < 0 {
 		a = -a
